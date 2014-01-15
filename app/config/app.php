@@ -106,7 +106,8 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-
+#		'LaravelBook\Ardent\Ardent',
+		'Way\Generators\GeneratorsServiceProvider'
 	),
 
 	/*
