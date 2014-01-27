@@ -44,8 +44,13 @@
 		</div>
 	</div>
 	<div class='container'>
+		@if (Session::has('flash_notice'))
+			<div id='flash_notice' class='alert alert-info'>
+				{{ Session::get('flash_notice') }}
+			</div>
+		@endif
 		<div class='col-sm-9'>
-			@yield('content');
+			@yield('content')
 		</div>
 		<div class='col-sm-3'>
 			@section('sidebar')

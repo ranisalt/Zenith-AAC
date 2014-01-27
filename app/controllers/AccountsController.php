@@ -1,21 +1,10 @@
 <?php
 class AccountsController extends BaseController {
 	protected $layout = 'layouts.master';
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
+	public function index()	{
         return View::make('accounts.index');
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
 	public function create()
 	{
 		$account = new Account();
@@ -23,31 +12,33 @@ class AccountsController extends BaseController {
 		$account->password = Input::get('password');
 		$account->creation = time();
 		if ($account->save()) {
-			return Redirect::to('account');
+/*			$account = Account::find($account->id);
+			Session::put('account_id', $account->id);
+			Session::put('access', $account->type);
+			Session::put('admin', $account->access >= Config::get('otserv.admin_access'));
+			return Redirect::to('account');*/
+			return $this->login();
 		}
 		dd($account->errors()->all());
 		return Redirect::back()->withInput()->withErrors($validation);
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
+	public function login()
 	{
-		//
+		$account = Account::where('name', Input::get('name'))->first();
+		if ($account->comparePassword(Input::get('password'))) {
+			Session::put('account_id', $account->id);
+      Session::put('access', $account->type);
+      Session::put('admin', $account->access >= Config::get('otserv.admin_access'));
+      return Redirect::to('account');
+		}
+		return Redirect::to('login')->with('flash_error', 'Wrong username or password.');
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
+	public function show()
 	{
-        return View::make('accounts.show');
+		$account = Account::find(Session::get('account_id'));
+		return View::make('accounts.show', $account);
 	}
 
 	/**

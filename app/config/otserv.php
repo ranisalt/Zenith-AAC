@@ -6,4 +6,6 @@ return array(
 	 * wrong values will always fail to validate
 	 */
 	'encryption' => 'sha1',
+
+	'admin_access' => 6,
 );
