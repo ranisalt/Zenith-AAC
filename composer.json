@@ -4,9 +4,8 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.1.*",
-		"laravelbook/ardent": "dev-master",
-		"way/generators": "dev-master"
+		"laravel/framework": "4.1.17",
+		"laravelbook/ardent": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
@@ -20,6 +19,7 @@
 	},
 	"scripts": {
 		"post-install-cmd": [
+			"php artisan clear-compiled",
 			"php artisan optimize"
 		],
 		"post-update-cmd": [
@@ -33,5 +33,5 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "dev"
+	"minimum-stability": "stable"
 }

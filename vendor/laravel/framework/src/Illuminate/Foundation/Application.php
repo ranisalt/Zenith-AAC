@@ -26,7 +26,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 	 *
 	 * @var string
 	 */
-	const VERSION = '4.1.16';
+	const VERSION = '4.1.15';
 
 	/**
 	 * Indicates if the application has "booted".
@@ -282,30 +282,14 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 	}
 
 	/**
-	 * Force register a service provider with the application.
-	 *
-	 * @param  \Illuminate\Support\ServiceProvider|string  $provider
-	 * @param  array  $options
-	 * @return \Illuminate\Support\ServiceProvider
-	 */
-	public function forgeRegister($provider, $options = array())
-	{
-		return $this->register($provider, $options, true);
-	}
-
-	/**
 	 * Register a service provider with the application.
 	 *
 	 * @param  \Illuminate\Support\ServiceProvider|string  $provider
 	 * @param  array  $options
-	 * @param  bool   $force
 	 * @return \Illuminate\Support\ServiceProvider
 	 */
-	public function register($provider, $options = array(), $force = false)
+	public function register($provider, $options = array())
 	{
-		if ($registered = $this->getRegistered($provider) && ! $force)
-                                     return $registered;
-
 		// If the given "provider" is a string, we will resolve it, passing in the
 		// application instance automatically for the developer. This is simply
 		// a more convenient way of specifying your service provider classes.
@@ -332,25 +316,6 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 		if ($this->booted) $provider->boot();
 
 		return $provider;
-	}
-
-	/**
-	 * Get the registered service provider instnace if it exists.
-	 *
-	 * @param  \Illuminate\Support\ServiceProvider|string  $provider
-	 * @return \Illuminate\Support\ServiceProvider|null
-	 */
-	public function getRegistered($provider)
-	{
-		$name = is_string($provider) ? $provider : get_class($provider);
-
-		if (array_key_exists($name, $this->loadedProviders))
-		{
-			return array_first($this->serviceProviders, function($key, $value) use ($name)
-			{
-				return get_class($value) == $name;
-			});
-		}
 	}
 
 	/**
@@ -1024,7 +989,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 			'cookie'         => 'Illuminate\Cookie\CookieJar',
 			'encrypter'      => 'Illuminate\Encryption\Encrypter',
 			'db'             => 'Illuminate\Database\DatabaseManager',
-			'events'         => 'Illuminate\Events\Dispatacher',
+			'events'         => 'Illuminate\Events\Dispatcher',
 			'files'          => 'Illuminate\Filesystem\Filesystem',
 			'form'           => 'Illuminate\Html\FormBuilder',
 			'hash'           => 'Illuminate\Hashing\HasherInterface',
@@ -1032,7 +997,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 			'translator'     => 'Illuminate\Translation\Translator',
 			'log'            => 'Illuminate\Log\Writer',
 			'mailer'         => 'Illuminate\Mail\Mailer',
-			'paginator'      => 'Illuminate\Pagination\Environment',
+			'paginator'      => 'Illuminate\Pagination\Factory',
 			'auth.reminder'  => 'Illuminate\Auth\Reminders\PasswordBroker',
 			'queue'          => 'Illuminate\Queue\QueueManager',
 			'redirect'       => 'Illuminate\Routing\Redirector',
@@ -1044,7 +1009,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 			'remote'         => 'Illuminate\Remote\RemoteManager',
 			'url'            => 'Illuminate\Routing\UrlGenerator',
 			'validator'      => 'Illuminate\Validation\Factory',
-			'view'           => 'Illuminate\View\Environment',
+			'view'           => 'Illuminate\View\Factory',
 		);
 
 		foreach ($aliases as $key => $alias)

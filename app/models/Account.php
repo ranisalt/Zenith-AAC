@@ -1,8 +1,8 @@
 <?php
-use LaravelBook\Ardent\Ardent;
-class Account extends Ardent {
+class Account extends Eloquent {
 	protected $guarded = array();
 	protected $hidden = array('password');
+	protected $softDelete = true;
 
 	public static $rules = array(
 		'name' => 'required|unique:accounts|alpha_dash|between:4,30',
@@ -12,12 +12,13 @@ class Account extends Ardent {
 
 	public $timestamps = false;
 
-	public function beforeSave() {
+	/*public function beforeSave() {
+		$this->creation = date('U');
 		$this->password = Account::hashPassword($this->password);
-	}
+	}*/
 
 	public function characters() {
-		return $this->hasMany('Character');
+		return $this->hasMany('Character', 'account_id', 'id')->withTrashed();
 	}
 
 	public static function hashPassword($password) {

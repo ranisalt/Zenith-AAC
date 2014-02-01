@@ -5,8 +5,10 @@
 	<title>@yield('title')</title>
 	{{ HTML::script('js/jquery-2.0.3.min.js'); }}
 	{{ HTML::script('js/bootstrap.min.js'); }}
+	@yield('scripts')
 	{{ HTML::style('css/bootstrap.min.css'); }}
 	{{ HTML::style('css/bootstrap-theme.min.css'); }}
+	@yield('styles')
 </head>
 <body>
 	<div class='navbar navbar-inverse' role='navigation'>
@@ -38,7 +40,12 @@
 					</button>
 				</form>
 				<ul class='nav navbar-nav navbar-right'>
-					<li><a href='{{ URL::to('account'); }}'><span class='glyphicon glyphicon-share-alt'></span>Login or create account</a></li>
+					@if (Session::has('account_id'))
+						<li><a href='{{ URL::to('account'); }}'><span class='glyphicon glyphicon-share-alt'></span>Manage your account</a></li>
+						<li><a href='{{ URL::to('logout'); }}'><span class='glyphicon glyphicon-share-alt'></span>Logout</a></li>
+					@else
+						<li><a href='{{ URL::to('login'); }}'><span class='glyphicon glyphicon-share-alt'></span>Login or create account</a></li>
+					@endif
 				</ul>
 			</div>
 		</div>
@@ -49,6 +56,14 @@
 				{{ Session::get('flash_notice') }}
 			</div>
 		@endif
+		@if (Session::has('flash_error'))
+      <div id='flash_error' class='alert alert-error'>
+        {{ Session::get('flash_error') }}
+				@if ($errors)
+					{{ implode($errors->all()) }}
+				@endif
+      </div>
+    @endif
 		<div class='col-sm-9'>
 			@yield('content')
 		</div>
