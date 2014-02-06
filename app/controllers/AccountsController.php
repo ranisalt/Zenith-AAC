@@ -36,9 +36,11 @@ class AccountsController extends BaseController {
 	}
 
 	public function index()	{
-		$account = Account::find(Session::get('account_id'));
-		$account->characters;
-		return View::make('accounts.index', $account);
+		$data = array();
+		$data['title'] = 'Account management';
+		$data['account'] = Account::find(Session::get('account_id'));
+		$data['characters'] = $data['account']->characters;
+		return View::make('accounts.index', $data);
 	}
 	
 	public function changeEmail() {
@@ -48,7 +50,7 @@ class AccountsController extends BaseController {
 			$account = Account::find(Session::get('account_id'));
 			if ($account->comparePassword(Input::get('ce_password'))) {
 				$account->email_new = $new_email;
-				$account->email_token = Hash::make($new_email . date('U'));
+				$account->email_token = hash('sha1', $new_email . date('U'));
 				if ($account->save()) {
 					Mail::send('emails.change_email', $account->toArray(), function($message) use ($account) {
 						$message->from(Config::get('otserv.server_email'), Config::get('otserv.server_name'));
@@ -113,5 +115,9 @@ class AccountsController extends BaseController {
 			}
 		}
 		return Redirect::route('account')->with('flash_error', 'Your account could not be terminated because the password you entered did not match.');
+	}
+	
+	public function createCharacter() {
+		//$validator
 	}
 }

@@ -31,3 +31,18 @@ Route::post('account/{action}', array('before' => 'auth', function($action) {
 Route::get('account/change-email/{token}', function($token) {
 	return App::make('AccountsController')->updateEmail($token);
 });
+
+
+Route::get('account/{name}/edit', function($name) {
+	return App::make('CharactersController')->edit(str_replace('+', ' ', $name));
+});
+
+Route::put('account/{name}/edit', function($name) {
+	return App::make('CharactersController')->update(str_replace('+', ' ', $name));
+});
+Route::get('account/{name}/delete', function($name) {
+	return App::make('CharactersController')->delete(str_replace('+', ' ', $name));
+});
+Route::get('account/{name}/undelete', function($name) {
+	return App::make('CharactersController')->undelete(str_replace('+', ' ', $name));
+});

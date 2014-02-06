@@ -1,79 +1,52 @@
 <?php
-
 class CharactersController extends BaseController {
+	protected $layout = 'layouts.master';
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-        return View::make('characters.index');
+	public function login()	{ return View::make('accounts.login'); }
+	public function logout() {
+		Session::flush();
+		return Redirect::route('root')->with('flash_notice', 'You are now logged out.');
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-        return View::make('characters.create');
-	}
+	/*public function create() {
+		$validator = Validator::make(Input::all(), Account::$rules);
+	
+		if ($validator->passes()) {
+			Account::create(array(
+				'name' => Input::get('name'),
+				'password' => Account::hashPassword(Input::get('password')),
+				'creation' => date('U')
+			));
+			$this->authenticate();
+			return Redirect::route('account')->with('flash_notice', 'You have successfully created your account.');
+		} else {
+			return Redirect::back()->withInput()->withErrors($validator);
+		}
+	}*/
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
+	public function edit($name)	{
+		$character = Character::where('account_id', Session::get('account_id'))->where('name', $name)->first();
+		$data = array();
+		$data['title'] = 'Character management';
+		$data['character'] = $character;
+		return View::make('characters.edit', $data);
 	}
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-        return View::make('characters.show');
+	
+	public function update($name)	{
+		$character = Character::where('account_id', Session::get('account_id'))->where('name', $name)->first();
+		$character->is_hidden = null !== Input::get('is_hidden');
+		$character->comment = Input::get('comment');
+		$character->save();
+		return Redirect::route('account')->with('flash_notice', 'Your character was updated successfully.');
 	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-        return View::make('characters.edit');
+	
+	public function delete($name) {
+		$character = Character::where('account_id', Session::get('account_id'))->where('name', $name)->delete();
+		return Redirect::route('account')->with('flash_notice', 'Your character ' . $name . ' was scheduled for deletion on ' . date('M d Y, H:i:s e', strtotime('+2 months')) . '.');
 	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
+	
+	public function undelete($name) {
+		$character = Character::onlyTrashed()->where('account_id', Session::get('account_id'))->where('name', $name)->restore();
+		return Redirect::route('account')->with('flash_notice', 'Your character ' . $name . '\'s deletion was unscheduled.');
 	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
-
 }

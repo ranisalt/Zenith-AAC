@@ -7,15 +7,9 @@ class Account extends Eloquent {
 	public static $rules = array(
 		'name' => 'required|unique:accounts|alpha_dash|between:4,30',
 		'password' => 'required|between:6,50',
-#		'email' => 'unique:accounts|email'
 	);
 
 	public $timestamps = false;
-
-	/*public function beforeSave() {
-		$this->creation = date('U');
-		$this->password = Account::hashPassword($this->password);
-	}*/
 
 	public function characters() {
 		return $this->hasMany('Character', 'account_id', 'id')->withTrashed();

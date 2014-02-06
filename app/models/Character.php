@@ -10,10 +10,6 @@ class Character extends Eloquent {
 
 	public $timestamps = false;
 
-	public function beforeSave() {
-		$this->password = Account::hashPassword($this->password);
-	}
-
 	public function account() {
 		return $this->belongsTo('Account', 'account_id', 'id');
 	}
