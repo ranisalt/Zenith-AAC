@@ -2,7 +2,7 @@
 return array(
 	'debug' => true,
 	'url' => 'http://localhost',
-	'timezone' => 'UTC',
+	'timezone' => 'America/Sao_Paulo',
 	'locale' => 'en',
 	'key' => 'CUErGLCajNew2zYeXuURoYB5U2WvN71R',
 	'providers' => array(
@@ -32,7 +32,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-		#'LaravelBook\Ardent\Ardent',
+		'Codesleeve\AssetPipeline\AssetPipelineServiceProvider'
 	),
 	'manifest' => storage_path().'/meta',
 	'aliases' => array(

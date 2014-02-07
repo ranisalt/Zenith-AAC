@@ -77,6 +77,15 @@ CREATE TABLE IF NOT EXISTS `players` (
   KEY `vocation` (`vocation`)
 ) ENGINE=InnoDB;
 
+CREATE TABLE IF NOT EXISTS `news` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`title` tinytext not null,
+	`content` text not null,
+	`hidden` tinyint(1) unsigned not null default '0',
+	`created_at` timestamp not null default current_timestamp,
+	primary key (`id`)
+) ENGINE=InnoDB;
+
 CREATE TABLE IF NOT EXISTS `account_bans` (
   `account_id` int(11) NOT NULL,
   `reason` varchar(255) NOT NULL,

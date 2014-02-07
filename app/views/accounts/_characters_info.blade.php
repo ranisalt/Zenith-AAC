@@ -14,7 +14,9 @@
 				@unless (empty($characters))
 					@foreach ($characters as $character)
 					<tr>
-						<td class='col-xs-5'><strong>{{{ $character['name'] }}}</strong> <small>{{{ Config::get('otserv.vocations')[$character['vocation']], ' - ', $character['level'] }}}</small></td>
+						<td class='col-xs-5'><strong>{{{ $character['name'] }}}</strong> <small>
+{{ null/*Config::get('otserv.vocations')*/ }}
+ - {{{ $character['level'] }}}</small></td>
 						<td class='col-xs-3'>{{{ "OTservera" }}}</td>
 						<td class='col-xs-2'>{{{ $character['is_hidden'] ? ($character['deleted_at'] ? 'hidden, deleted' : 'hidden') : ($character['deleted_at'] ? 'deleted' : null) }}}</td>
 						<td class='col-xs-2'>{{ HTML::link('account/' . $character['name'] . '/edit', 'edit'), ', ', $character["deleted_at"] ? HTML::link('account/' . $character['name'] . '/undelete', 'undelete') : HTML::link('account/' . $character['name'] . '/delete', 'delete') }}</td>

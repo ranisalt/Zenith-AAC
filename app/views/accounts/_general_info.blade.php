@@ -9,15 +9,15 @@
 				</tr>
 				<tr>
 					<td class='col-xs-3'>Email address:</td>
-					<td class='col-xs-9'>{{{ $account['email'] or 'not set' }}}</td>
+					<td class='col-xs-9'>{{{ $account['email'] ? $account['email'] : 'not set' }}}</td>
 				</tr>
 				<tr>
 					<td class='col-xs-3'>Created:</td>
-					<td class='col-xs-9'>{{{ date('M d Y, H:i:s e', $account['creation']) }}}</td>
+					<td class='col-xs-9'>{{{ date('M d Y, H:i:s T', $account['creation']) }}}</td>
 				</tr>
 				<tr>
 					<td class='col-xs-3'>Last login:</td>
-					<td class='col-xs-9'>{{{ $account['lastday'] ? date('M d Y, H:i:s e', $account['lastday']) : 'never logged in' }}}</td>
+					<td class='col-xs-9'>{{{ $account['lastday'] ? date('M d Y, H:i:s T', $account['lastday']) : 'never logged in' }}}</td>
 				</tr>
 				<tr>
 					<td class='col-xs-3'>Account status:</td>

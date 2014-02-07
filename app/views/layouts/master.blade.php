@@ -3,11 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>{{{ Config::get('otserv.server_name') }}}@if (isset($title)) {{{ " - $title" }}} @endif</title>
-	{{ HTML::script('js/jquery-2.0.3.min.js'); }}
-	{{ HTML::script('js/bootstrap.min.js'); }}
+	{{ javascript_include_tag() }}
 	@yield('scripts')
-	{{ HTML::style('css/bootstrap.min.css'); }}
-	{{ HTML::style('css/bootstrap-theme.min.css'); }}
+	{{ stylesheet_link_tag() }}
 	@yield('styles')
 </head>
 <body>
@@ -32,7 +30,6 @@
 		<div class='col-sm-3'>
 			@include('sidebar/master')
 		</div>
-	</div>
 	</div>
 </body>
 </html>

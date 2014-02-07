@@ -23,7 +23,7 @@
 				@foreach (Config::get('otserv.worlds') as $id => $world)
 				<div class='radio'>
 					<label>
-						{{ Form::radio($id, $world) }}{{ $world }}
+						{{ Form::radio("world$id", $world) }}{{ $world }}
 					</label>
 				</div>
 				@endforeach
@@ -33,7 +33,7 @@
 				@foreach (Config::get('otserv.cities') as $id => $city)
 				<div class='radio'>
 					<label>
-						{{ Form::radio($id, $city['name']) }}{{ $city['name'] }}
+						{{ Form::radio("city$id", $city['name']) }}{{ $city['name'] }}
 					</label>
 				</div>
 				@endforeach
