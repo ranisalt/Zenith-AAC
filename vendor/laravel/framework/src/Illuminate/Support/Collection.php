@@ -186,7 +186,7 @@ class Collection implements ArrayAccess, ArrayableInterface, Countable, Iterator
 
 		foreach ($this->items as $key => $value)
 		{
-			$key = is_callable($groupBy) ? $groupBy($value, $key) : array_get($value, $groupBy);
+			$key = is_callable($groupBy) ? $groupBy($value, $key) : data_get($value, $groupBy);
 
 			$results[$key][] = $value;
 		}
@@ -387,6 +387,25 @@ class Collection implements ArrayAccess, ArrayableInterface, Countable, Iterator
 	}
 
 	/**
+	 * Chunk the underlying collection array.
+	 *
+	 * @param  int $size
+	 * @param  bool  $preserveKeys
+	 * @return \Illuminate\Support\Collection
+	 */
+	public function chunk($size, $preserveKeys = false)
+	{
+		$chunks = new static;
+
+		foreach (array_chunk($this->items, $size, $preserveKeys) as $chunk)
+		{
+			$chunks->push(new static($chunk));
+		}
+
+		return $chunks;
+	}
+
+	/**
 	 * Sort through each item with a callback.
 	 *
 	 * @param  Closure  $callback
@@ -402,14 +421,17 @@ class Collection implements ArrayAccess, ArrayableInterface, Countable, Iterator
 	/**
 	 * Sort the collection using the given Closure.
 	 *
-	 * @param  \Closure  $callback
-	 * @param  int   $options
-	 * @param  bool  $descending
+	 * @param  \Closure|string  $callback
+	 * @param  int              $options
+	 * @param  bool             $descending
 	 * @return \Illuminate\Support\Collection
 	 */
-	public function sortBy(Closure $callback, $options = SORT_REGULAR, $descending = false)
+	public function sortBy($callback, $options = SORT_REGULAR, $descending = false)
 	{
 		$results = array();
+
+		if (is_string($callback)) $callback =
+                          $this->valueRetriever($callback);
 
 		// First we will loop through the items and get the comparator from a callback
 		// function which we were given. Then, we will sort the returned values and
@@ -438,11 +460,11 @@ class Collection implements ArrayAccess, ArrayableInterface, Countable, Iterator
 	/**
 	 * Sort the collection in descending order using the given Closure.
 	 *
-	 * @param  \Closure  $callback
-	 * @param  int   $options
+	 * @param  \Closure|string  $callback
+	 * @param  int              $options
 	 * @return \Illuminate\Support\Collection
 	 */
-	public function sortByDesc(Closure $callback, $options = SORT_REGULAR)
+	public function sortByDesc($callback, $options = SORT_REGULAR)
 	{
 		return $this->sortBy($callback, $options, true);
 	}
@@ -458,6 +480,27 @@ class Collection implements ArrayAccess, ArrayableInterface, Countable, Iterator
 	public function splice($offset, $length = 0, $replacement = array())
 	{
 		return new static(array_splice($this->items, $offset, $length, $replacement));
+	}
+
+	/**
+	 * Get the sum of the given values.
+	 *
+	 * @param  \Closure  $callback
+	 * @param  string  $callback
+	 * @return mixed
+	 */
+	public function sum($callback)
+	{
+		if (is_string($callback))
+		{
+			$callback = $this->valueRetriever($callback);
+		}
+
+		return $this->reduce(function($result, $item) use ($callback)
+		{
+			return $result += $callback($item);
+
+		}, 0);
 	}
 
 	/**
@@ -506,6 +549,20 @@ class Collection implements ArrayAccess, ArrayableInterface, Countable, Iterator
 		$this->items = array_values($this->items);
 
 		return $this;
+	}
+
+	/**
+	 * Get a value retrieving callback.
+	 *
+	 * @param  string  $value
+	 * @return \Closure
+	 */
+	protected function valueRetriever($value)
+	{
+		return function($item) use ($value)
+		{
+			return is_object($item) ? $item->{$value} : array_get($item, $value);
+		};
 	}
 
 	/**

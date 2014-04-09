@@ -1,0 +1,8 @@
+<?php
+$controller_path = 'App\Modules\Server\Controllers';
+Route::get('account/create', array('as' => 'account.create', 'before' => 'guest', 'uses' => 'AccountsController@create'));
+Route::post('account', array('as' => 'account.store', 'before' => 'guest', 'uses' => 'AccountsController@store'));
+Route::get('account', array('as' => 'account.show', 'before' => 'auth', 'uses' => 'AccountsController@show'));
+Route::get('account/edit', array('as' => 'account.edit', 'before' => 'auth', 'uses' => 'AccountsController@edit'));
+Route::put('account', array('as' => 'account.update', 'before' => 'auth', 'uses' => 'AccountsController@update'));
+Route::delete('account', array('as' => 'account.destroy', 'before' => 'auth', 'uses' => 'AccountsController@destroy'));

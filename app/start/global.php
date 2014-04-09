@@ -15,6 +15,7 @@ ClassLoader::addDirectories(array(
 
 	app_path().'/commands',
 	app_path().'/controllers',
+	app_path().'/libraries',
 	app_path().'/models',
 	app_path().'/database/seeds',
 
@@ -65,6 +66,22 @@ App::error(function(Exception $exception, $code)
 App::down(function()
 {
 	return Response::make("Be right back!", 503);
+});
+
+/*
+|--------------------------------------------------------------------------
+| OpenTibia Schema Authentication
+|--------------------------------------------------------------------------
+|
+| The built-in system that comes with Laravel uses Bcrypt for password hash
+| and different methods for authentication that do not work with OpenTibia.
+| Because of this, we need to extend a new authentication service.
+|
+*/
+
+Auth::extend('tibia', function() {
+	$provider = new \Zenith\Auth\OpenTibiaAccountProvider();
+	return new \Illuminate\Auth\Guard($provider, App::make('session.store'));
 });
 
 /*

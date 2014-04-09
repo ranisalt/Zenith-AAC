@@ -1,0 +1,6 @@
+{
+	"enabled": true,
+	"provider": [
+		"App\\Modules\\Server\\ServerServiceProvider"
+	]
+}

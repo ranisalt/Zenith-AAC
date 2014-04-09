@@ -1,0 +1,11 @@
+<?php namespace App\Modules\Server;
+
+class ServerServiceProvider extends ServerServiceProvider {
+	public function boot() {
+		parent::boot('tfs1.0');
+	}
+
+	public function register() {
+		parent::register('tfs1.0');
+	}
+}

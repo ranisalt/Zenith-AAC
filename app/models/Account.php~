@@ -1,0 +1,52 @@
+<?php
+
+use Illuminate\User\UserInterface;
+class Account extends Eloquent implements UserInterface {
+
+	protected $guarded = array();
+	protected $hidden = array('password');
+	protected $softDelete = true;
+
+	public static $rules = array();
+	public $timestamps = true;
+
+	const CREATED_AT = 'creation';
+
+	public static function characters() {
+		return $this->hasMany('Character', 'account_id', 'id')->withTrashed();
+	}
+
+	/**
+	 * The "booting" method of the model.
+	 *
+	 * @return void
+	 */
+	protected static function boot() {
+		parent::boot();
+	}
+
+	/**
+	 * Update the creation timestamp.
+	 *
+	 * @return void
+	 */
+	protected function updateTimestamps()
+	{
+		$time = $this->freshTimestamp();
+		if (!$this->exists && !$this->isDirty(static::CREATED_AT)) {
+			$this->setCreatedAt($time);
+		}
+	}
+
+	public function setPasswordAttribute($password) {
+		$this->attributes['password'] = Hash::make($password);
+	}
+
+	public function getAuthIdentifier() {
+		return $this->attributes['id'];
+	}
+
+	public function getAuthPassword() {
+		return $this->attributes['password'];
+	}
+}

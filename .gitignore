@@ -1,6 +1,15 @@
 /bootstrap/compiled.php
+/public/scss
+/public/.sass-cache
+/public/.watch_scss
+/public/css/*
+/public/favicon.ico*
 /vendor
 composer.phar
 composer.lock
+schema.sql
+.env.local.php
+.env.php
 .DS_Store
 Thumbs.db
+*php~

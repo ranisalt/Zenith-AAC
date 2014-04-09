@@ -51,9 +51,9 @@ class Connection implements ConnectionInterface {
 	protected $events;
 
 	/**
-	 * The paginator factory instance.
+	 * The paginator environment instance.
 	 *
-	 * @var \Illuminate\Pagination\Factory
+	 * @var \Illuminate\Pagination\Paginator
 	 */
 	protected $paginator;
 
@@ -649,6 +649,8 @@ class Connection implements ConnectionInterface {
 	 */
 	public function getReadPdo()
 	{
+		if ($this->transactions >= 1) return $this->getPdo();
+
 		return $this->readPdo ?: $this->pdo;
 	}
 
@@ -794,9 +796,9 @@ class Connection implements ConnectionInterface {
 	}
 
 	/**
-	 * Get the paginator factory instance.
+	 * Get the paginator environment instance.
 	 *
-	 * @return \Illuminate\Pagination\Factory
+	 * @return \Illuminate\Pagination\Environment
 	 */
 	public function getPaginator()
 	{
@@ -809,9 +811,9 @@ class Connection implements ConnectionInterface {
 	}
 
 	/**
-	 * Set the pagination factory instance.
+	 * Set the pagination environment instance.
 	 *
-	 * @param  \Illuminate\Pagination\Factory|\Closure  $paginator
+	 * @param  \Illuminate\Pagination\Environment|\Closure  $paginator
 	 * @return void
 	 */
 	public function setPaginator($paginator)
@@ -914,6 +916,16 @@ class Connection implements ConnectionInterface {
 	public function disableQueryLog()
 	{
 		$this->loggingQueries = false;
+	}
+
+	/**
+	 * Determine whether we're logging queries.
+	 *
+	 * @return bool
+	 */
+	public function logging()
+	{
+		return $this->loggingQueries;
 	}
 
 	/**

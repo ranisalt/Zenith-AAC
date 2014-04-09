@@ -1,0 +1,8 @@
+<?php
+
+class Newsticker extends Eloquent {
+	protected $guarded = array();
+	protected $table = 'zenith_newsticker';
+
+	public static $rules = array();
+}

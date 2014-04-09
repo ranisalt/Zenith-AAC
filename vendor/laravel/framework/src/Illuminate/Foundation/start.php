@@ -45,6 +45,7 @@ if ( ! extension_loaded('mcrypt'))
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Foundation\AliasLoader;
+use Illuminate\Config\EnvironmentVariables;
 use Illuminate\Config\Repository as Config;
 
 /*
@@ -103,6 +104,20 @@ Facade::setFacadeApplication($app);
 */
 
 $app->registerCoreContainerAliases();
+
+/*
+|--------------------------------------------------------------------------
+| Register The Environment Variables
+|--------------------------------------------------------------------------
+|
+| Here we will register all of the $_ENV and $_SERVER variables into the
+| process so that they're globally available configuration options so
+| sensitive configuration information can be swept out of the code.
+|
+*/
+
+with($envVariables = new EnvironmentVariables(
+	$app->getEnvironmentVariablesLoader()))->load($env);
 
 /*
 |--------------------------------------------------------------------------
@@ -213,7 +228,7 @@ $app->booted(function() use ($app, $env)
 | Load The Application Start Script
 |--------------------------------------------------------------------------
 |
-| The start script gives us the application the opportunity to override
+| The start scripts gives this application the opportunity to override
 | any of the existing IoC bindings, as well as register its own new
 | bindings for things like repositories, etc. We'll load it here.
 |

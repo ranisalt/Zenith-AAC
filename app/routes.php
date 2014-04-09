@@ -1,48 +1,25 @@
 <?php
 
-// root page
-Route::get('/', array('as' => 'root', 'uses' => 'NewsController@index'));
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the Closure to execute when that URI is requested.
+|
+*/
 
-// account page, user must be logged in to access
-Route::get('account', array('as' => 'account', 'before' => 'auth', 'uses' => 'AccountsController@index'));
+/*use Zenith\Setting\LuaParser;
+LuaParser::zenithify(LuaParser::read('/home/ranieri/forgottenserver/config.lua'));*/
 
-// logout page, user must be logged out to access
-Route::get('login', array('as' => 'login', 'before' => 'guest', 'uses' => 'AccountsController@login'));
+Route::get('/', array('as' => 'home', 'uses' => 'NewsController@index'));
+Route::get('news/{slug}', array('as' => 'news.show', 'uses' => 'NewsController@show'));
 
-// logout page, user must be logged in to access
-Route::get('logout', array('as' => 'logout', 'before' => 'auth', 'uses' => 'AccountsController@logout'));
+Route::get('login', array('as' => 'session.create', 'before' => 'guest', 'uses' => 'SessionsController@create'));
+Route::post('login', array('as' => 'session.store', 'before' => 'guest', 'uses' => 'SessionsController@store'));
+Route::get('logout', array('as' => 'session.destroy', 'before' => 'auth', 'uses' => 'SessionsController@destroy'));
 
-Route::post('account/auth', array('before' => 'guest', function() {
-	if (Input::has('create'))
-		return App::make('AccountsController')->create();
-	else if (Input::has('login'))
-		return App::make('AccountsController')->authenticate();
-	return Redirect::route('root');
-}));
-
-Route::post('account/{action}', array('before' => 'auth', function($action) {
-	$action = explode('-', $action);
-	$controller_action = array_shift($action);
-	foreach($action as $word)
-		$controller_action .= ucfirst($word);
-	return App::make('AccountsController')->$controller_action();
-}));
-
-Route::get('account/change-email/{token}', function($token) {
-	return App::make('AccountsController')->updateEmail($token);
-});
-
-
-Route::get('account/{name}/edit', function($name) {
-	return App::make('CharactersController')->edit(str_replace('+', ' ', $name));
-});
-
-Route::put('account/{name}/edit', function($name) {
-	return App::make('CharactersController')->update(str_replace('+', ' ', $name));
-});
-Route::get('account/{name}/delete', function($name) {
-	return App::make('CharactersController')->delete(str_replace('+', ' ', $name));
-});
-Route::get('account/{name}/undelete', function($name) {
-	return App::make('CharactersController')->undelete(str_replace('+', ' ', $name));
-});
+// TODO: Recovery key
+//Route::get('lost-password', 'RemindersController@getR');

@@ -1,1 +1,0 @@
-@include('sidebar._highscores')

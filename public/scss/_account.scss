@@ -1,0 +1,116 @@
+.panel {
+	@extend .clearfix;
+	border-radius: 3px;
+	color: #333;
+	
+	header {
+		@extend .clearfix;
+		h2, h3 {
+			color: #555;
+			font-size: 14px;
+			margin: 0;
+		}
+	
+		h2 {
+			@extend .gradient;
+			border: 1px solid #d8d8d8;
+			padding: 10px;
+		}
+		
+		h3 {
+			font-size: 13px;
+			text-align: center;
+		}
+	}
+	
+	header h3, > div { padding: 0 10px; }
+	
+	> div {
+		@extend .clearfix;
+		
+		&:not(:last-of-type) { border-bottom: 1px solid #ddd; }
+		&:hover { background: #f9f9f9; }
+	}
+
+	span {
+		display: block;
+		min-height: 1px;
+		padding: 5px 0;
+		
+		&.title {
+			@include span-columns(3);
+			font-weight: 700;
+			text-align: right;
+		}
+		
+		&.value {
+			@include span-columns(9);
+			
+			form > input {
+				margin: -2px 0;
+			}
+		}
+	}
+}
+
+.account-info, .criminal-record, .character-data, .character-info { @extend .panel; margin-bottom: 30px; }
+
+.red { color: #C00000; }
+.green { color: #008000; }
+
+.account-characters {
+	@extend .panel;
+
+	span {	
+		&.information { @include span-columns(5); }		
+		&.world { @include span-columns(3); }
+		&.status, &.options { @include span-columns(2); }
+		&.world, &.status, &.options { text-align: center; }
+		
+		&.empty {
+			padding: 11px;
+			text-align: center;
+		}
+	}
+	
+	> div { span { &.world, &.status { line-height: 37px; } } }
+	
+	a.create-character {
+		@extend .clearfix;
+		@extend .gradient;
+		@extend .right;
+		
+		border: 1px solid #D8D8D8;
+		border-radius: 5px;
+		font-size: 16px;
+		line-height: 22px;
+		margin-top: 7px;
+		padding: 11px 40px;
+		text-align: center;
+	}
+}
+
+.criminal-record {
+	.active {
+		@extend .red;
+	}
+	span {
+		&.date { @include span-columns(4); }
+		&.duration { @include span-columns(3); }
+		&.date, &.duration { text-align: center; }
+		&.reason { @include span-columns(5); }
+	}
+}
+
+.characters-info {
+	@extend .panel;
+
+	span {	
+		&.information { @include span-columns(6); }		
+		&.world { @include span-columns(3); }
+		&.status { @include span-columns(3); }
+		&.world, &.status { text-align: center; }
+	}
+	
+	> div span.status { line-height: 37px; }
+}

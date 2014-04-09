@@ -1,0 +1,992 @@
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10.
+ */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8+, and Opera
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #fff;
+  font: 13px/1.4em helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #4183c4;
+  /*&:hover { text-decoration: underline; }*/
+}
+
+.clearfix, #content-container, .character-form .row, .panel, .account-info, .criminal-record, .character-data, .character-info, .account-characters, .characters-info, .panel header, .account-info header, .criminal-record header, .character-data header, .character-info header, .account-characters header, .characters-info header, .panel > div, .account-info > div, .criminal-record > div, .character-data > div, .character-info > div, .account-characters > div, .characters-info > div, .account-characters a.create-character, .online-list header, .online-list div, .skill-list h3, .skill-list a, .highscore-list header, .highscore-list div, .highscore-list .pager {
+  *zoom: 1;
+}
+.clearfix:before, #content-container:before, .character-form .row:before, .panel:before, .account-info:before, .criminal-record:before, .character-data:before, .character-info:before, .account-characters:before, .characters-info:before, .panel header:before, .account-info header:before, .criminal-record header:before, .character-data header:before, .character-info header:before, .account-characters header:before, .characters-info header:before, .panel > div:before, .account-info > div:before, .criminal-record > div:before, .character-data > div:before, .character-info > div:before, .account-characters > div:before, .characters-info > div:before, .account-characters a.create-character:before, .online-list header:before, .online-list div:before, .skill-list h3:before, .skill-list a:before, .highscore-list header:before, .highscore-list div:before, .highscore-list .pager:before, .clearfix:after, #content-container:after, .character-form .row:after, .panel:after, .account-info:after, .criminal-record:after, .character-data:after, .character-info:after, .account-characters:after, .characters-info:after, .panel header:after, .account-info header:after, .criminal-record header:after, .character-data header:after, .character-info header:after, .account-characters header:after, .characters-info header:after, .panel > div:after, .account-info > div:after, .criminal-record > div:after, .character-data > div:after, .character-info > div:after, .account-characters > div:after, .characters-info > div:after, .account-characters a.create-character:after, .online-list header:after, .online-list div:after, .skill-list h3:after, .skill-list a:after, .highscore-list header:after, .highscore-list div:after, .highscore-list .pager:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after, #content-container:after, .character-form .row:after, .panel:after, .account-info:after, .criminal-record:after, .character-data:after, .character-info:after, .account-characters:after, .characters-info:after, .panel header:after, .account-info header:after, .criminal-record header:after, .character-data header:after, .character-info header:after, .account-characters header:after, .characters-info header:after, .panel > div:after, .account-info > div:after, .criminal-record > div:after, .character-data > div:after, .character-info > div:after, .account-characters > div:after, .characters-info > div:after, .account-characters a.create-character:after, .online-list header:after, .online-list div:after, .skill-list h3:after, .skill-list a:after, .highscore-list header:after, .highscore-list div:after, .highscore-list .pager:after {
+  clear: both;
+}
+
+.container, #content-container {
+  *zoom: 1;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 68em;
+}
+.container:before, #content-container:before, .container:after, #content-container:after {
+  content: " ";
+  display: table;
+}
+.container:after, #content-container:after {
+  clear: both;
+}
+
+.gradient, .search-character-form input.submit, .search-character-form a.submit, .account-form input[type="submit"], .character-form input[type="submit"], .panel header h2, .account-info header h2, .criminal-record header h2, .character-data header h2, .character-info header h2, .account-characters header h2, .characters-info header h2, .account-characters a.create-character {
+  background-color: #f3f3f3;
+  background: -webkit-linear-gradient( #f9f9f9, #f3f3f3) repeat-x #f3f3f3;
+  background: linear-gradient( #f9f9f9, #f3f3f3) repeat-x #f3f3f3;
+}
+
+.right, .account-characters a.create-character {
+  float: right;
+}
+
+#content-container {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20px 0 40px;
+}
+
+#page-content {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+}
+#page-content:last-child {
+  margin-right: 0;
+}
+
+#page-aside {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+}
+#page-aside:last-child {
+  margin-right: 0;
+}
+
+#page-footer {
+  padding: 20px 0;
+}
+
+#main-nav {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 6px 0;
+  text-shadow: 0 1px 0 #fff;
+}
+#main-nav > .container > div > a, #main-nav > #content-container > div > a {
+  color: #333;
+  display: inline-block;
+  float: left;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+#main-nav > .container > div > a:hover, #main-nav > #content-container > div > a:hover, #main-nav > .container > div > a.active, #main-nav > #content-container > div > a.active {
+  color: #4183c4;
+}
+#main-nav > .container > div > a + #main-nav > .container > div > a, #main-nav > #content-container > div > a + #main-nav > .container > div > a, #main-nav > .container > div > a + #main-nav > #content-container > div > a, #main-nav > #content-container > div > a + #main-nav > #content-container > div > a {
+  margin-left: 5px;
+}
+
+#site-links {
+  float: left;
+}
+
+#account-links {
+  float: right;
+}
+
+.search-character-form {
+  margin: 30px auto;
+  width: 400px;
+}
+.search-character-form input, .search-character-form a {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 5px 0 10px;
+  min-height: 34px;
+  padding: 7px 8px;
+}
+.search-character-form input:not(.submit), .search-character-form a:not(.submit) {
+  background: #fff;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  color: #333;
+  margin-right: 8px;
+  width: 300px;
+}
+.search-character-form input:not(.submit):focus, .search-character-form a:not(.submit):focus {
+  border: 1px solid #51a7e8;
+}
+.search-character-form input.submit, .search-character-form a.submit {
+  font-weight: 700;
+  padding: 7px 12px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.account-form, .character-form {
+  margin: 30px auto;
+  width: 400px;
+}
+.account-form input, .character-form input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.account-form input:not([type="radio"]), .character-form input:not([type="radio"]) {
+  display: block;
+  margin: 5px 0 15px;
+  min-height: 34px;
+  padding: 7px 8px;
+  width: 100%;
+}
+.account-form input:not([type="submit"]), .character-form input:not([type="submit"]) {
+  background: #fff;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  color: #333;
+}
+.account-form input:not([type="submit"]):focus, .character-form input:not([type="submit"]):focus {
+  border: 1px solid #51a7e8;
+}
+.account-form input[type="submit"], .character-form input[type="submit"] {
+  font-weight: 700;
+  padding: 7px 12px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.character-form {
+  width: 100%;
+}
+.character-form input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.character-form .name {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+}
+.character-form .name:last-child {
+  margin-right: 0;
+}
+.character-form .sex, .character-form .vocation, .character-form .city {
+  padding: 7px 8px;
+}
+.character-form .sex span, .character-form .vocation span, .character-form .city span {
+  line-height: 34px;
+}
+.character-form .title {
+  font-weight: bold;
+}
+.character-form .sex {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+}
+.character-form .sex:last-child {
+  margin-right: 0;
+}
+.character-form .sex span {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 40.29137%;
+  text-align: center;
+}
+.character-form .sex span:last-child {
+  margin-right: 0;
+}
+.character-form .sex .title {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+  padding-right: 14px;
+  text-align: right;
+}
+.character-form .sex .title:last-child {
+  margin-right: 0;
+}
+.character-form .vocation, .character-form .city {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
+.character-form .vocation:last-child, .character-form .city:last-child {
+  margin-right: 0;
+}
+.character-form .vocation .title, .character-form .city .title {
+  text-align: center;
+}
+.character-form .vocation span, .character-form .city span {
+  display: block;
+}
+
+.news {
+  line-height: 1.7em;
+}
+.news:not(:last-child), .newsticker {
+  border-bottom: 1px solid #eee;
+  margin: 0 0 30px;
+}
+.news article {
+  color: #666;
+  font-size: 15px;
+  margin: 0;
+}
+.news article p {
+  margin: 15px 0;
+}
+
+.newsticker {
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+.news-header {
+  margin: 0 0 4px;
+}
+.news-header h2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 1.2em;
+  margin: 13px 0;
+}
+
+.news-footer {
+  margin: 5px 0 0;
+}
+.news-footer h6 {
+  color: #808080;
+  font-size: 12px;
+  text-align: right;
+}
+
+.panel, .account-info, .criminal-record, .character-data, .character-info, .account-characters, .characters-info {
+  border-radius: 3px;
+  color: #333;
+}
+.panel header h2, .account-info header h2, .criminal-record header h2, .character-data header h2, .character-info header h2, .account-characters header h2, .characters-info header h2, .panel header h3, .account-info header h3, .criminal-record header h3, .character-data header h3, .character-info header h3, .account-characters header h3, .characters-info header h3 {
+  color: #555;
+  font-size: 14px;
+  margin: 0;
+}
+.panel header h2, .account-info header h2, .criminal-record header h2, .character-data header h2, .character-info header h2, .account-characters header h2, .characters-info header h2 {
+  border: 1px solid #d8d8d8;
+  padding: 10px;
+}
+.panel header h3, .account-info header h3, .criminal-record header h3, .character-data header h3, .character-info header h3, .account-characters header h3, .characters-info header h3 {
+  font-size: 13px;
+  text-align: center;
+}
+.panel header h3, .account-info header h3, .criminal-record header h3, .character-data header h3, .character-info header h3, .account-characters header h3, .characters-info header h3, .panel > div, .account-info > div, .criminal-record > div, .character-data > div, .character-info > div, .account-characters > div, .characters-info > div {
+  padding: 0 10px;
+}
+.panel > div:not(:last-of-type), .account-info > div:not(:last-of-type), .criminal-record > div:not(:last-of-type), .character-data > div:not(:last-of-type), .character-info > div:not(:last-of-type), .account-characters > div:not(:last-of-type), .characters-info > div:not(:last-of-type) {
+  border-bottom: 1px solid #ddd;
+}
+.panel > div:hover, .account-info > div:hover, .criminal-record > div:hover, .character-data > div:hover, .character-info > div:hover, .account-characters > div:hover, .characters-info > div:hover {
+  background: #f9f9f9;
+}
+.panel span, .account-info span, .criminal-record span, .character-data span, .character-info span, .account-characters span, .characters-info span {
+  display: block;
+  min-height: 1px;
+  padding: 5px 0;
+}
+.panel span.title, .account-info span.title, .criminal-record span.title, .character-data span.title, .character-info span.title, .account-characters span.title, .characters-info span.title {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  font-weight: 700;
+  text-align: right;
+}
+.panel span.title:last-child, .account-info span.title:last-child, .criminal-record span.title:last-child, .character-data span.title:last-child, .character-info span.title:last-child, .account-characters span.title:last-child, .characters-info span.title:last-child {
+  margin-right: 0;
+}
+.panel span.value, .account-info span.value, .criminal-record span.value, .character-data span.value, .character-info span.value, .account-characters span.value, .characters-info span.value {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+}
+.panel span.value:last-child, .account-info span.value:last-child, .criminal-record span.value:last-child, .character-data span.value:last-child, .character-info span.value:last-child, .account-characters span.value:last-child, .characters-info span.value:last-child {
+  margin-right: 0;
+}
+.panel span.value form > input, .account-info span.value form > input, .criminal-record span.value form > input, .character-data span.value form > input, .character-info span.value form > input, .account-characters span.value form > input, .characters-info span.value form > input {
+  margin: -2px 0;
+}
+
+.account-info, .criminal-record, .character-data, .character-info {
+  margin-bottom: 30px;
+}
+
+.red, .criminal-record .active {
+  color: #C00000;
+}
+
+.green {
+  color: #008000;
+}
+
+.account-characters span.information {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 40.29137%;
+}
+.account-characters span.information:last-child {
+  margin-right: 0;
+}
+.account-characters span.world {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+}
+.account-characters span.world:last-child {
+  margin-right: 0;
+}
+.account-characters span.status, .account-characters span.options {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+}
+.account-characters span.status:last-child, .account-characters span.options:last-child {
+  margin-right: 0;
+}
+.account-characters span.world, .account-characters span.status, .account-characters span.options {
+  text-align: center;
+}
+.account-characters span.empty {
+  padding: 11px;
+  text-align: center;
+}
+.account-characters > div span.world, .account-characters > div span.status {
+  line-height: 37px;
+}
+.account-characters a.create-character {
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 22px;
+  margin-top: 7px;
+  padding: 11px 40px;
+  text-align: center;
+}
+
+.criminal-record span.date {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+}
+.criminal-record span.date:last-child {
+  margin-right: 0;
+}
+.criminal-record span.duration {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+}
+.criminal-record span.duration:last-child {
+  margin-right: 0;
+}
+.criminal-record span.date, .criminal-record span.duration {
+  text-align: center;
+}
+.criminal-record span.reason {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 40.29137%;
+}
+.criminal-record span.reason:last-child {
+  margin-right: 0;
+}
+
+.characters-info span.information {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
+.characters-info span.information:last-child {
+  margin-right: 0;
+}
+.characters-info span.world {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+}
+.characters-info span.world:last-child {
+  margin-right: 0;
+}
+.characters-info span.status {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+}
+.characters-info span.status:last-child {
+  margin-right: 0;
+}
+.characters-info span.world, .characters-info span.status {
+  text-align: center;
+}
+.characters-info > div span.status {
+  line-height: 37px;
+}
+
+.online-list header, .online-list div {
+  padding: 5px 10px;
+}
+.online-list div:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+.online-list div:hover {
+  background: #f9f9f9;
+}
+.online-list h2, .online-list span {
+  text-align: center;
+}
+.online-list h2.name, .online-list span.name {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 57.35098%;
+}
+.online-list h2.name:last-child, .online-list span.name:last-child {
+  margin-right: 0;
+}
+.online-list h2.level, .online-list span.level {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+}
+.online-list h2.level:last-child, .online-list span.level:last-child {
+  margin-right: 0;
+}
+.online-list h2.vocation, .online-list span.vocation {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+}
+.online-list h2.vocation:last-child, .online-list span.vocation:last-child {
+  margin-right: 0;
+}
+
+.skill-list {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  float: left;
+  text-align: center;
+}
+.skill-list:last-child {
+  margin-right: 0;
+}
+.skill-list a {
+  display: block;
+  padding: 5px 0;
+}
+.skill-list a:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+.skill-list a:hover {
+  background: #f9f9f9;
+}
+
+.highscore-list {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+}
+.highscore-list:last-child {
+  margin-right: 0;
+}
+.highscore-list header, .highscore-list div {
+  padding: 5px 10px;
+}
+.highscore-list div:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+.highscore-list div:hover {
+  background: #f9f9f9;
+}
+.highscore-list h1, .highscore-list h2, .highscore-list span {
+  text-align: center;
+}
+.highscore-list h2.skill, .highscore-list h2.level, .highscore-list span.skill, .highscore-list span.level {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+}
+.highscore-list h2.skill:last-child, .highscore-list h2.level:last-child, .highscore-list span.skill:last-child, .highscore-list span.level:last-child {
+  margin-right: 0;
+}
+.highscore-list h2.name, .highscore-list span.name {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+}
+.highscore-list h2.name:last-child, .highscore-list span.name:last-child {
+  margin-right: 0;
+}
+.highscore-list h2.rank, .highscore-list span.rank {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 6.17215%;
+  font-weight: 700;
+}
+.highscore-list h2.rank:last-child, .highscore-list span.rank:last-child {
+  margin-right: 0;
+}
+.highscore-list h2.experience, .highscore-list span.experience {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+}
+.highscore-list h2.experience:last-child, .highscore-list span.experience:last-child {
+  margin-right: 0;
+}
+.highscore-list.level .name {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
+.highscore-list.level .name:last-child {
+  margin-right: 0;
+}
+.highscore-list .pager {
+  list-style: none;
+  padding: 40px;
+}
+.highscore-list .pager :first-child {
+  float: left;
+}
+.highscore-list .pager :last-child {
+  float: right;
+}
