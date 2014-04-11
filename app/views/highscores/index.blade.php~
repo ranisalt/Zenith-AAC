@@ -1,9 +1,0 @@
-@extends('public.master')
-
-@section('content')
-	<div class='skill-list'>
-		@foreach($skills as $slug => $name)
-			{{ HTML::link(URL::route('highscores.show', array('skill' => $slug)), $name) }}
-		@endforeach
-	</div>
-@stop
