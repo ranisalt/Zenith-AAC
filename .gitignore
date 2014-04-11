@@ -1,15 +1,63 @@
+# Created by http://www.gitignore.io
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must ends with two \r.
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+
+### Linux ###
+*~
+
+# KDE directory preferences
+.directory
+
+
+### Windows ###
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+
+### Laravel ###
 /bootstrap/compiled.php
+/vendor
+.env.local.php
+.env.php
+composer.phar
+composer.lock
+
+
+### Sass ###
+.sass-cache
+
+
+### Old .gitignore ###
+schema.sql
 /public/scss
-/public/.sass-cache
 /public/.watch_scss
 /public/css/*
 /public/favicon.ico*
-/vendor
-composer.phar
-composer.lock
-schema.sql
-.env.local.php
-.env.php
-.DS_Store
-Thumbs.db
-*php~

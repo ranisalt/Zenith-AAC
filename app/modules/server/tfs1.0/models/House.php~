@@ -1,5 +1,0 @@
-<?php
-
-class House extends \Eloquent {
-    protected $fillable = [];
-}
