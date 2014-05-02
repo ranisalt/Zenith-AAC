@@ -5,9 +5,9 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Eloquent, Hash, Log;
-class Account extends Eloquent implements RemindableInterface, UserInterface {
 
-	protected $guarded = array();
+class Account extends Eloquent implements RemindableInterface, UserInterface {
+	protected $guarded = array('id');
 	protected $hidden = array('password');
 	protected $softDelete = true;
 
@@ -91,9 +91,7 @@ class Account extends Eloquent implements RemindableInterface, UserInterface {
 	 */
 	public function setCreatedAt($value) {
 		$this->{static::CREATED_AT} = $value->timestamp;
-		//if (\Config::get('app.debug')) {
-			Log::info("New account '{$this->name}' created at {$value} ({$value->timestamp})");
-		//}
+		Log::info("New account '{$this->name}' created at {$value} ({$value->timestamp})");
 	}
 	
 	/**
@@ -121,5 +119,17 @@ class Account extends Eloquent implements RemindableInterface, UserInterface {
 	
 	public function getReminderEmail(){
 		return $this->attributes['email'];
+	}
+	
+	public function getRememberToken() {
+		  return $this->remember_token;
+	}
+
+	public function setRememberToken($value) {
+		  $this->remember_token = $value;
+	}
+
+	public function getRememberTokenName() {
+		  return 'remember_token';
 	}
 }

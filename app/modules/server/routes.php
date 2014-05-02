@@ -17,5 +17,8 @@ Route::put('character/{name}', array('as' => 'character.update', 'before' => 'au
 
 Route::get('highscores/{skill?}', array('as' => 'highscores.show', 'uses' => $controller_path.'HighscoresController@show'));
 
-Route::get('houses', array('as' => 'houses.index', 'uses' => $controller_path.'HousesController@index'));
-Route::get('houses/{param?}', array('as' => 'houses.show', 'uses' => $controller_path.'HousesController@show'));
+Route::get('houses', array('as' => 'house.index', 'uses' => $controller_path.'HousesController@index'));
+Route::get('houses/{id}', array('as' => 'house.show', 'uses' => $controller_path.'HousesController@show'));
+
+Route::get('houses/{id}/bid', array('as' => 'housebid.create', 'before' => 'auth', 'uses' => $controller_path.'HouseBidsController@create'));
+Route::post('houses/{id}/bid', array('as' => 'housebid.store', 'before' => 'auth', 'uses' => $controller_path.'HouseBidsController@store'));

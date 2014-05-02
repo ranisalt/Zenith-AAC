@@ -3,13 +3,13 @@
 @section('content')
 	<div class='character-data'>
 		<header>
-			<h2>Character data</h2>
+			<h2>Character information</h2>
 		</header>
 		<div>
 			<span class='title'>{{{ trans('character.spans.name') }}}:</span>
 			<span class='value'>
-				@if($character->deletion)
-					{{{ $character->name }}}, {{{ trans('character.spans.deletion-message', array('date' => date(Config::get('zenith.long_datetime_format'), $character->deletion))) }}}
+				@if($character->deletion->isFuture())
+					{{{ $character->name }}}, {{{ trans('character.spans.deletion-message', array('date' => $character->deletion->format(Config::get('zenith.long_datetime_format')))) }}}
 				@else
 					{{{ $character->name }}}
 				@endif
@@ -39,11 +39,17 @@
 				<span class='value'>{{{ Config::get('zenith.cities')[$character->town_id]['name'] }}}</span>
 			</div>
 		@endif
+		@if($character->house)
+			<div>
+				<span class='title'>{{{ trans('character.spans.house') }}}:</span>
+				<span class='value'>{{ HTML::link(route('house.show', $character->house->id), $character->house->name) }} ({{{ Config::get('zenith.cities')[$character->house->town_id]['name'] }}}) is paid until {{{ $character->house->paid->format(Config::get('zenith.long_date_format')) }}}</span>
+			</div>
+		@endif
 		<div>
 			<span class='title'>{{{ trans('character.spans.last-login') }}}:</span>
 			<span class='value'>{{{ $character->lastlogin->timestamp ? $character->lastlogin->format(Config::get('zenith.long_datetime_format')) : trans('character.spans.never-logged-in') }}}</span>
 		</div>
-		@if($character->comment)
+		@unless(empty($character->comment))
 		<div>
 			<span class='title'>{{{ trans('character.spans.comment') }}}:</span>
 			<span class='value'>{{{ $character->comment }}}</span>

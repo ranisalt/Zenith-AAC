@@ -1,8 +1,11 @@
 <?php namespace App\Modules\Server\Controllers;
 
+use App\Modules\Server\Models\Character;
 use App\Modules\Server\Models\House;
 use View;
 class HousesController extends \BaseController {
+
+	protected $layout = 'public.master';
 
 	/**
 	 * Display a listing of the resource.
@@ -10,9 +13,12 @@ class HousesController extends \BaseController {
 	 * @return Response
 	 */
 	public function index() {
-		$houses = House::orderBy('town_id');
+		$houses_by_city = array();
+		foreach(House::orderBy('name')->orderBy('town_id')->get() as $house) {
+			$houses_by_city[$house->town_id][] = $house;
+		}
 		return View::make('houses.index', array(
-			'houses' => $houses,
+			'houses_by_city' => $houses_by_city,
 		));
 	}
 
@@ -30,20 +36,18 @@ class HousesController extends \BaseController {
 		 * hexadecimal values. That's why I use 'ctype_digit', which allows only
 		 * characters in the range 0-9.
 		 */
-		if (ctype_digit($param)) {
-			$house = House::find($param);
+		if (ctype_digit($id)) {
+			$house = House::find($id);
+			if ($house->owner) {
+				$house->owner = Character::find($house->owner);
+			} else if ($house->highest_bidder) {
+				$house->highest_bidder = Character::find($house->highest_bidder);
+			}
+			return View::make('houses.show', array(
+				'house' => $house,
+			));
+		} else {
+			App::abort(404);
 		}
 	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
 }

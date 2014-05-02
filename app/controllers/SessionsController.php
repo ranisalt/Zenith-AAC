@@ -38,7 +38,7 @@ class SessionsController extends \BaseController {
 	 * @return Response
 	 */
 	public function store() {
-		if ($auth = Auth::attempt(array('name' => Input::get('name'), 'password' => Input::get('password')), true)) {
+		if ($auth = Auth::attempt(array(Input::only('name', 'password'), true)) {
 			return Redirect::route('account.show');
 		} else {
 			return Redirect::back()->with('error', 'Account name or password is not correct.');

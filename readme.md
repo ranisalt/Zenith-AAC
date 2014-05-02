@@ -16,15 +16,15 @@ Features
 When Zenith is out of development versions and is published as ready for use, the following features will be available:
 
 - Account and character management integrated with OpenTibia default database schema - that means no extra tables with very few new columns ![done](http://i.imgur.com/tduiZBL.png)
-- Article and newsticker systems with an easy to use WYSIWYG editor (yet to be chosen or developed)
-- Comprehensive community pages, such as highscores, who is online and kill statistics
-- Complete out-of-the-box management for houses and guilds (player-side and administrator-side)
+- Article and newsticker systems with an easy to use WYSIWYG editor (yet to be chosen or developed) ![working](http://i.imgur.com/ivaAcM7.png)
+- Comprehensive community pages, such as highscores, who is online and kill statistics ![done](http://i.imgur.com/tduiZBL.png)
+- Complete out-of-the-box management for houses and guilds (player-side and administrator-side) ![working](http://i.imgur.com/ivaAcM7.png)
 - Administration dashboard with easy and advanced server management tools
 - Simple plugin and assets system, with installation and configuration like Wordpress.
 
 Architecture
 ------------
-Zenith is built on the solid Laravel framework, which itselt is built with PHP. You will need a webserver such as [Nginx](http://nginx.org) and the PHP interpreter (or the [HHVM](http://hhvm.com)) to run them properly. It is also recommended that you have Git installed to keep your Zenith installation on the bleeding edge by pulling it regularly from the repositories.
+Zenith is built on the solid Laravel framework, which itself is built with PHP. You will need a webserver such as [Nginx](http://nginx.org) and the PHP interpreter (or the [HHVM](http://hhvm.com)) to run them properly. It is also recommended that you have Git installed to keep your Zenith installation on the bleeding edge by pulling it regularly from the repositories.
 
 Licensing
 ---------

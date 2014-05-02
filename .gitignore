@@ -1,22 +1,5 @@
 # Created by http://www.gitignore.io
 
-### OSX ###
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Icon must ends with two \r.
-Icon
-
-
-# Thumbnails
-._*
-
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
-
-
 ### Linux ###
 *~
 
@@ -42,22 +25,33 @@ $RECYCLE.BIN/
 *.msp
 
 
-### Laravel ###
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+### Laravel4 ###
 /bootstrap/compiled.php
 /vendor
-.env.local.php
+.env.*.php
 .env.php
-composer.phar
 composer.lock
-
-
-### Sass ###
-.sass-cache
-
-
-### Old .gitignore ###
-schema.sql
-/public/scss
-/public/.watch_scss
-/public/css/*
-/public/favicon.ico*

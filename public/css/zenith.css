@@ -409,14 +409,14 @@ a {
   /*&:hover { text-decoration: underline; }*/
 }
 
-.clearfix, #content-container, .character-form .row, .panel, .account-info, .criminal-record, .character-data, .character-info, .account-characters, .characters-info, .panel header, .account-info header, .criminal-record header, .character-data header, .character-info header, .account-characters header, .characters-info header, .panel > div, .account-info > div, .criminal-record > div, .character-data > div, .character-info > div, .account-characters > div, .characters-info > div, .account-characters a.create-character, .online-list header, .online-list div, .skill-list h3, .skill-list a, .highscore-list header, .highscore-list div, .highscore-list .pager {
+.clearfix, #content-container, .character-form .row, .panel, .account-info, .criminal-record, .character-data, .character-info, .account-characters, .characters-info, .house-list, .panel header, .account-info header, .criminal-record header, .character-data header, .character-info header, .account-characters header, .characters-info header, .house-list header, .panel > div, .account-info > div, .criminal-record > div, .character-data > div, .character-info > div, .account-characters > div, .characters-info > div, .house-list > div, .account-characters a.create-character, .online-list header, .online-list div, .skill-list h3, .skill-list a, .highscore-list header, .highscore-list div, .highscore-list .pager {
   *zoom: 1;
 }
-.clearfix:before, #content-container:before, .character-form .row:before, .panel:before, .account-info:before, .criminal-record:before, .character-data:before, .character-info:before, .account-characters:before, .characters-info:before, .panel header:before, .account-info header:before, .criminal-record header:before, .character-data header:before, .character-info header:before, .account-characters header:before, .characters-info header:before, .panel > div:before, .account-info > div:before, .criminal-record > div:before, .character-data > div:before, .character-info > div:before, .account-characters > div:before, .characters-info > div:before, .account-characters a.create-character:before, .online-list header:before, .online-list div:before, .skill-list h3:before, .skill-list a:before, .highscore-list header:before, .highscore-list div:before, .highscore-list .pager:before, .clearfix:after, #content-container:after, .character-form .row:after, .panel:after, .account-info:after, .criminal-record:after, .character-data:after, .character-info:after, .account-characters:after, .characters-info:after, .panel header:after, .account-info header:after, .criminal-record header:after, .character-data header:after, .character-info header:after, .account-characters header:after, .characters-info header:after, .panel > div:after, .account-info > div:after, .criminal-record > div:after, .character-data > div:after, .character-info > div:after, .account-characters > div:after, .characters-info > div:after, .account-characters a.create-character:after, .online-list header:after, .online-list div:after, .skill-list h3:after, .skill-list a:after, .highscore-list header:after, .highscore-list div:after, .highscore-list .pager:after {
+.clearfix:before, #content-container:before, .character-form .row:before, .panel:before, .account-info:before, .criminal-record:before, .character-data:before, .character-info:before, .account-characters:before, .characters-info:before, .house-list:before, .panel header:before, .account-info header:before, .criminal-record header:before, .character-data header:before, .character-info header:before, .account-characters header:before, .characters-info header:before, .house-list header:before, .panel > div:before, .account-info > div:before, .criminal-record > div:before, .character-data > div:before, .character-info > div:before, .account-characters > div:before, .characters-info > div:before, .house-list > div:before, .account-characters a.create-character:before, .online-list header:before, .online-list div:before, .skill-list h3:before, .skill-list a:before, .highscore-list header:before, .highscore-list div:before, .highscore-list .pager:before, .clearfix:after, #content-container:after, .character-form .row:after, .panel:after, .account-info:after, .criminal-record:after, .character-data:after, .character-info:after, .account-characters:after, .characters-info:after, .house-list:after, .panel header:after, .account-info header:after, .criminal-record header:after, .character-data header:after, .character-info header:after, .account-characters header:after, .characters-info header:after, .house-list header:after, .panel > div:after, .account-info > div:after, .criminal-record > div:after, .character-data > div:after, .character-info > div:after, .account-characters > div:after, .characters-info > div:after, .house-list > div:after, .account-characters a.create-character:after, .online-list header:after, .online-list div:after, .skill-list h3:after, .skill-list a:after, .highscore-list header:after, .highscore-list div:after, .highscore-list .pager:after {
   content: " ";
   display: table;
 }
-.clearfix:after, #content-container:after, .character-form .row:after, .panel:after, .account-info:after, .criminal-record:after, .character-data:after, .character-info:after, .account-characters:after, .characters-info:after, .panel header:after, .account-info header:after, .criminal-record header:after, .character-data header:after, .character-info header:after, .account-characters header:after, .characters-info header:after, .panel > div:after, .account-info > div:after, .criminal-record > div:after, .character-data > div:after, .character-info > div:after, .account-characters > div:after, .characters-info > div:after, .account-characters a.create-character:after, .online-list header:after, .online-list div:after, .skill-list h3:after, .skill-list a:after, .highscore-list header:after, .highscore-list div:after, .highscore-list .pager:after {
+.clearfix:after, #content-container:after, .character-form .row:after, .panel:after, .account-info:after, .criminal-record:after, .character-data:after, .character-info:after, .account-characters:after, .characters-info:after, .house-list:after, .panel header:after, .account-info header:after, .criminal-record header:after, .character-data header:after, .character-info header:after, .account-characters header:after, .characters-info header:after, .house-list header:after, .panel > div:after, .account-info > div:after, .criminal-record > div:after, .character-data > div:after, .character-info > div:after, .account-characters > div:after, .characters-info > div:after, .house-list > div:after, .account-characters a.create-character:after, .online-list header:after, .online-list div:after, .skill-list h3:after, .skill-list a:after, .highscore-list header:after, .highscore-list div:after, .highscore-list .pager:after {
   clear: both;
 }
 
@@ -435,7 +435,7 @@ a {
   clear: both;
 }
 
-.gradient, .search-character-form input.submit, .search-character-form a.submit, .account-form input[type="submit"], .character-form input[type="submit"], .panel header h2, .account-info header h2, .criminal-record header h2, .character-data header h2, .character-info header h2, .account-characters header h2, .characters-info header h2, .account-characters a.create-character {
+.gradient, .search-character-form input.submit, .search-character-form a.submit, .account-form input[type="submit"], .character-form input[type="submit"], .panel header h2, .account-info header h2, .criminal-record header h2, .character-data header h2, .character-info header h2, .account-characters header h2, .characters-info header h2, .house-list header h2, .account-characters a.create-character {
   background-color: #f3f3f3;
   background: -webkit-linear-gradient( #f9f9f9, #f3f3f3) repeat-x #f3f3f3;
   background: linear-gradient( #f9f9f9, #f3f3f3) repeat-x #f3f3f3;
@@ -672,38 +672,38 @@ a {
   text-align: right;
 }
 
-.panel, .account-info, .criminal-record, .character-data, .character-info, .account-characters, .characters-info {
+.panel, .account-info, .criminal-record, .character-data, .character-info, .account-characters, .characters-info, .house-list {
   border-radius: 3px;
   color: #333;
 }
-.panel header h2, .account-info header h2, .criminal-record header h2, .character-data header h2, .character-info header h2, .account-characters header h2, .characters-info header h2, .panel header h3, .account-info header h3, .criminal-record header h3, .character-data header h3, .character-info header h3, .account-characters header h3, .characters-info header h3 {
+.panel header h2, .account-info header h2, .criminal-record header h2, .character-data header h2, .character-info header h2, .account-characters header h2, .characters-info header h2, .house-list header h2, .panel header h3, .account-info header h3, .criminal-record header h3, .character-data header h3, .character-info header h3, .account-characters header h3, .characters-info header h3, .house-list header h3 {
   color: #555;
   font-size: 14px;
   margin: 0;
 }
-.panel header h2, .account-info header h2, .criminal-record header h2, .character-data header h2, .character-info header h2, .account-characters header h2, .characters-info header h2 {
+.panel header h2, .account-info header h2, .criminal-record header h2, .character-data header h2, .character-info header h2, .account-characters header h2, .characters-info header h2, .house-list header h2 {
   border: 1px solid #d8d8d8;
   padding: 10px;
 }
-.panel header h3, .account-info header h3, .criminal-record header h3, .character-data header h3, .character-info header h3, .account-characters header h3, .characters-info header h3 {
+.panel header h3, .account-info header h3, .criminal-record header h3, .character-data header h3, .character-info header h3, .account-characters header h3, .characters-info header h3, .house-list header h3 {
   font-size: 13px;
   text-align: center;
 }
-.panel header h3, .account-info header h3, .criminal-record header h3, .character-data header h3, .character-info header h3, .account-characters header h3, .characters-info header h3, .panel > div, .account-info > div, .criminal-record > div, .character-data > div, .character-info > div, .account-characters > div, .characters-info > div {
+.panel header h3, .account-info header h3, .criminal-record header h3, .character-data header h3, .character-info header h3, .account-characters header h3, .characters-info header h3, .house-list header h3, .panel > div, .account-info > div, .criminal-record > div, .character-data > div, .character-info > div, .account-characters > div, .characters-info > div, .house-list > div {
   padding: 0 10px;
 }
-.panel > div:not(:last-of-type), .account-info > div:not(:last-of-type), .criminal-record > div:not(:last-of-type), .character-data > div:not(:last-of-type), .character-info > div:not(:last-of-type), .account-characters > div:not(:last-of-type), .characters-info > div:not(:last-of-type) {
+.panel > div:not(:last-of-type), .account-info > div:not(:last-of-type), .criminal-record > div:not(:last-of-type), .character-data > div:not(:last-of-type), .character-info > div:not(:last-of-type), .account-characters > div:not(:last-of-type), .characters-info > div:not(:last-of-type), .house-list > div:not(:last-of-type) {
   border-bottom: 1px solid #ddd;
 }
-.panel > div:hover, .account-info > div:hover, .criminal-record > div:hover, .character-data > div:hover, .character-info > div:hover, .account-characters > div:hover, .characters-info > div:hover {
+.panel > div:hover, .account-info > div:hover, .criminal-record > div:hover, .character-data > div:hover, .character-info > div:hover, .account-characters > div:hover, .characters-info > div:hover, .house-list > div:hover {
   background: #f9f9f9;
 }
-.panel span, .account-info span, .criminal-record span, .character-data span, .character-info span, .account-characters span, .characters-info span {
+.panel span, .account-info span, .criminal-record span, .character-data span, .character-info span, .account-characters span, .characters-info span, .house-list span {
   display: block;
   min-height: 1px;
   padding: 5px 0;
 }
-.panel span.title, .account-info span.title, .criminal-record span.title, .character-data span.title, .character-info span.title, .account-characters span.title, .characters-info span.title {
+.panel span.title, .account-info span.title, .criminal-record span.title, .character-data span.title, .character-info span.title, .account-characters span.title, .characters-info span.title, .house-list span.title {
   float: left;
   display: block;
   margin-right: 2.35765%;
@@ -711,19 +711,19 @@ a {
   font-weight: 700;
   text-align: right;
 }
-.panel span.title:last-child, .account-info span.title:last-child, .criminal-record span.title:last-child, .character-data span.title:last-child, .character-info span.title:last-child, .account-characters span.title:last-child, .characters-info span.title:last-child {
+.panel span.title:last-child, .account-info span.title:last-child, .criminal-record span.title:last-child, .character-data span.title:last-child, .character-info span.title:last-child, .account-characters span.title:last-child, .characters-info span.title:last-child, .house-list span.title:last-child {
   margin-right: 0;
 }
-.panel span.value, .account-info span.value, .criminal-record span.value, .character-data span.value, .character-info span.value, .account-characters span.value, .characters-info span.value {
+.panel span.value, .account-info span.value, .criminal-record span.value, .character-data span.value, .character-info span.value, .account-characters span.value, .characters-info span.value, .house-list span.value {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 74.41059%;
 }
-.panel span.value:last-child, .account-info span.value:last-child, .criminal-record span.value:last-child, .character-data span.value:last-child, .character-info span.value:last-child, .account-characters span.value:last-child, .characters-info span.value:last-child {
+.panel span.value:last-child, .account-info span.value:last-child, .criminal-record span.value:last-child, .character-data span.value:last-child, .character-info span.value:last-child, .account-characters span.value:last-child, .characters-info span.value:last-child, .house-list span.value:last-child {
   margin-right: 0;
 }
-.panel span.value form > input, .account-info span.value form > input, .criminal-record span.value form > input, .character-data span.value form > input, .character-info span.value form > input, .account-characters span.value form > input, .characters-info span.value form > input {
+.panel span.value form > input, .account-info span.value form > input, .criminal-record span.value form > input, .character-data span.value form > input, .character-info span.value form > input, .account-characters span.value form > input, .characters-info span.value form > input, .house-list span.value form > input {
   margin: -2px 0;
 }
 
@@ -989,4 +989,29 @@ a {
 }
 .highscore-list .pager :last-child {
   float: right;
+}
+
+.house-list:not(:first-child) {
+  margin-top: 30px;
+}
+.house-list span.name, .house-list span.status {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+}
+.house-list span.name:last-child, .house-list span.status:last-child {
+  margin-right: 0;
+}
+.house-list span.size, .house-list span.rent {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+}
+.house-list span.size:last-child, .house-list span.rent:last-child {
+  margin-right: 0;
+}
+.house-list span.size, .house-list span.rent, .house-list span.status {
+  text-align: center;
 }

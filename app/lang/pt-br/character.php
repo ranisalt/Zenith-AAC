@@ -26,6 +26,7 @@ return array(
 		'vocation' => 'Vocação',
 		'level' => 'Nível',
 		'residence' => 'Residência',
+		'house' => 'Casa',
 		'last-login' => 'Último login',
 			'never-logged-in' => 'nunca entrou no jogo',
 		'comment' => 'Comentário',

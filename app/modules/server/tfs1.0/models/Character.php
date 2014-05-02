@@ -2,8 +2,7 @@
 
 use Carbon\Carbon;
 class Character extends \Eloquent {
-	protected $guarded = array();
-	protected $hidden = array('password');
+	protected $guarded = array('id');
 	protected $softDelete = true;
 	protected $table = 'players';
 	
@@ -39,6 +38,10 @@ class Character extends \Eloquent {
 	
 	public function account() {
 		return $this->belongsTo('App\\Modules\\Server\\Models\\Account', 'account_id', 'id');
+	}
+	
+	public function house() {
+		return $this->hasOne('App\\Modules\\Server\\Models\\House', 'owner', 'id');
 	}
 	
 	/**

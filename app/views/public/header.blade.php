@@ -5,7 +5,7 @@
 			{{ HTML::link(route('character.online'), 'Who is online?') }}
 			{{ HTML::link(route('character.index'), 'Characters') }}
 			{{ HTML::link(route('highscores.show'), 'Highscores') }}
-			<a class='item' href='#TODO'>Houses</a>
+			{{ HTML::link(route('house.index'), 'Houses') }}
 			<a class='item' href='#TODO'>Guilds</a>
 		</div>
 

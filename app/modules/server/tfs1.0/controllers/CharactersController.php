@@ -82,7 +82,7 @@ class CharactersController extends \BaseController {
 	 * @return Response
 	 */
 	public function show($name) {
-		if ($character = Character::withTrashed()->where('name', $name)->first()) {
+		if ($character = Character::withTrashed()->with('house')->where('name', $name)->first()) {
 			$account = Account::with('bans', 'characters')->find($character->account->id);
 			return View::make('characters.show', array(
 				'account'	=> $account,
