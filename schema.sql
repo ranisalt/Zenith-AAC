@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `otserv` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `otserv`;
--- MySQL dump 10.13  Distrib 5.5.35, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.37, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: otserv
 -- ------------------------------------------------------
--- Server version	5.5.35-0ubuntu0.13.10.2
+-- Server version	5.5.37-0ubuntu0.13.10.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -40,15 +40,6 @@ CREATE TABLE `account_ban_history` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `account_ban_history`
---
-
-LOCK TABLES `account_ban_history` WRITE;
-/*!40000 ALTER TABLE `account_ban_history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `account_ban_history` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `account_bans`
 --
 
@@ -67,15 +58,6 @@ CREATE TABLE `account_bans` (
   CONSTRAINT `account_bans_ibfk_2` FOREIGN KEY (`banned_by`) REFERENCES `players` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `account_bans`
---
-
-LOCK TABLES `account_bans` WRITE;
-/*!40000 ALTER TABLE `account_bans` DISABLE KEYS */;
-/*!40000 ALTER TABLE `account_bans` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `account_viplist`
@@ -98,15 +80,6 @@ CREATE TABLE `account_viplist` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `account_viplist`
---
-
-LOCK TABLES `account_viplist` WRITE;
-/*!40000 ALTER TABLE `account_viplist` DISABLE KEYS */;
-/*!40000 ALTER TABLE `account_viplist` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `accounts`
 --
 
@@ -127,18 +100,8 @@ CREATE TABLE `accounts` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `accounts`
---
-
-LOCK TABLES `accounts` WRITE;
-/*!40000 ALTER TABLE `accounts` DISABLE KEYS */;
-INSERT INTO `accounts` VALUES (1,'ranieri','e14a58aca2677ce10ffcf477d940eec8c7a0c52c',1,0,0,'',NULL,NULL,1394142968,NULL);
-/*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `guild_invites`
@@ -156,15 +119,6 @@ CREATE TABLE `guild_invites` (
   CONSTRAINT `guild_invites_ibfk_2` FOREIGN KEY (`guild_id`) REFERENCES `guilds` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `guild_invites`
---
-
-LOCK TABLES `guild_invites` WRITE;
-/*!40000 ALTER TABLE `guild_invites` DISABLE KEYS */;
-/*!40000 ALTER TABLE `guild_invites` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `guild_membership`
@@ -188,15 +142,6 @@ CREATE TABLE `guild_membership` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `guild_membership`
---
-
-LOCK TABLES `guild_membership` WRITE;
-/*!40000 ALTER TABLE `guild_membership` DISABLE KEYS */;
-/*!40000 ALTER TABLE `guild_membership` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `guild_ranks`
 --
 
@@ -213,15 +158,6 @@ CREATE TABLE `guild_ranks` (
   CONSTRAINT `guild_ranks_ibfk_1` FOREIGN KEY (`guild_id`) REFERENCES `guilds` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `guild_ranks`
---
-
-LOCK TABLES `guild_ranks` WRITE;
-/*!40000 ALTER TABLE `guild_ranks` DISABLE KEYS */;
-/*!40000 ALTER TABLE `guild_ranks` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `guild_wars`
@@ -246,15 +182,6 @@ CREATE TABLE `guild_wars` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `guild_wars`
---
-
-LOCK TABLES `guild_wars` WRITE;
-/*!40000 ALTER TABLE `guild_wars` DISABLE KEYS */;
-/*!40000 ALTER TABLE `guild_wars` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `guilds`
 --
 
@@ -274,14 +201,6 @@ CREATE TABLE `guilds` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `guilds`
---
-
-LOCK TABLES `guilds` WRITE;
-/*!40000 ALTER TABLE `guilds` DISABLE KEYS */;
-/*!40000 ALTER TABLE `guilds` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -325,15 +244,6 @@ CREATE TABLE `guildwar_kills` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `guildwar_kills`
---
-
-LOCK TABLES `guildwar_kills` WRITE;
-/*!40000 ALTER TABLE `guildwar_kills` DISABLE KEYS */;
-/*!40000 ALTER TABLE `guildwar_kills` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `house_lists`
 --
 
@@ -348,15 +258,6 @@ CREATE TABLE `house_lists` (
   CONSTRAINT `house_lists_ibfk_1` FOREIGN KEY (`house_id`) REFERENCES `houses` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `house_lists`
---
-
-LOCK TABLES `house_lists` WRITE;
-/*!40000 ALTER TABLE `house_lists` DISABLE KEYS */;
-/*!40000 ALTER TABLE `house_lists` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `houses`
@@ -386,15 +287,6 @@ CREATE TABLE `houses` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `houses`
---
-
-LOCK TABLES `houses` WRITE;
-/*!40000 ALTER TABLE `houses` DISABLE KEYS */;
-/*!40000 ALTER TABLE `houses` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `ip_bans`
 --
 
@@ -412,15 +304,6 @@ CREATE TABLE `ip_bans` (
   CONSTRAINT `ip_bans_ibfk_1` FOREIGN KEY (`banned_by`) REFERENCES `players` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `ip_bans`
---
-
-LOCK TABLES `ip_bans` WRITE;
-/*!40000 ALTER TABLE `ip_bans` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ip_bans` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `market_history`
@@ -444,15 +327,6 @@ CREATE TABLE `market_history` (
   CONSTRAINT `market_history_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `market_history`
---
-
-LOCK TABLES `market_history` WRITE;
-/*!40000 ALTER TABLE `market_history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `market_history` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `market_offers`
@@ -479,15 +353,6 @@ CREATE TABLE `market_offers` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `market_offers`
---
-
-LOCK TABLES `market_offers` WRITE;
-/*!40000 ALTER TABLE `market_offers` DISABLE KEYS */;
-/*!40000 ALTER TABLE `market_offers` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `player_deaths`
 --
 
@@ -512,15 +377,6 @@ CREATE TABLE `player_deaths` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `player_deaths`
---
-
-LOCK TABLES `player_deaths` WRITE;
-/*!40000 ALTER TABLE `player_deaths` DISABLE KEYS */;
-/*!40000 ALTER TABLE `player_deaths` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `player_depotitems`
 --
 
@@ -540,15 +396,6 @@ CREATE TABLE `player_depotitems` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `player_depotitems`
---
-
-LOCK TABLES `player_depotitems` WRITE;
-/*!40000 ALTER TABLE `player_depotitems` DISABLE KEYS */;
-/*!40000 ALTER TABLE `player_depotitems` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `player_inboxitems`
 --
 
@@ -566,15 +413,6 @@ CREATE TABLE `player_inboxitems` (
   CONSTRAINT `player_inboxitems_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `player_inboxitems`
---
-
-LOCK TABLES `player_inboxitems` WRITE;
-/*!40000 ALTER TABLE `player_inboxitems` DISABLE KEYS */;
-/*!40000 ALTER TABLE `player_inboxitems` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `player_items`
@@ -597,15 +435,6 @@ CREATE TABLE `player_items` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `player_items`
---
-
-LOCK TABLES `player_items` WRITE;
-/*!40000 ALTER TABLE `player_items` DISABLE KEYS */;
-/*!40000 ALTER TABLE `player_items` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `player_namelocks`
 --
 
@@ -625,15 +454,6 @@ CREATE TABLE `player_namelocks` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `player_namelocks`
---
-
-LOCK TABLES `player_namelocks` WRITE;
-/*!40000 ALTER TABLE `player_namelocks` DISABLE KEYS */;
-/*!40000 ALTER TABLE `player_namelocks` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `player_spells`
 --
 
@@ -647,15 +467,6 @@ CREATE TABLE `player_spells` (
   CONSTRAINT `player_spells_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `player_spells`
---
-
-LOCK TABLES `player_spells` WRITE;
-/*!40000 ALTER TABLE `player_spells` DISABLE KEYS */;
-/*!40000 ALTER TABLE `player_spells` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `player_storage`
@@ -672,15 +483,6 @@ CREATE TABLE `player_storage` (
   CONSTRAINT `player_storage_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `player_storage`
---
-
-LOCK TABLES `player_storage` WRITE;
-/*!40000 ALTER TABLE `player_storage` DISABLE KEYS */;
-/*!40000 ALTER TABLE `player_storage` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `players`
@@ -746,24 +548,14 @@ CREATE TABLE `players` (
   `skill_fishing_tries` bigint(20) unsigned NOT NULL DEFAULT '0',
   `comment` text NOT NULL,
   `is_hidden` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `account_id` (`account_id`),
   KEY `vocation` (`vocation`),
   CONSTRAINT `players_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `players`
---
-
-LOCK TABLES `players` WRITE;
-/*!40000 ALTER TABLE `players` DISABLE KEYS */;
-INSERT INTO `players` VALUES (1,'Dominus Ignis',1,1,1,3,150,150,0,0,0,0,0,136,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,1,0,0,0,0,0,0,0,43200,-1,2520,10,0,10,0,10,0,10,0,10,0,10,0,10,0,'',0,NULL);
-/*!40000 ALTER TABLE `players` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -795,15 +587,6 @@ CREATE TABLE `players_online` (
   PRIMARY KEY (`player_id`)
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `players_online`
---
-
-LOCK TABLES `players_online` WRITE;
-/*!40000 ALTER TABLE `players_online` DISABLE KEYS */;
-/*!40000 ALTER TABLE `players_online` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `server_config`
@@ -845,14 +628,21 @@ CREATE TABLE `tile_store` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tile_store`
+-- Table structure for table `zenith_house_bids`
 --
 
-LOCK TABLES `tile_store` WRITE;
-/*!40000 ALTER TABLE `tile_store` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tile_store` ENABLE KEYS */;
-UNLOCK TABLES;
-
+DROP TABLE IF EXISTS `zenith_house_bids`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `zenith_house_bids` (
+  `house_id` int(11) NOT NULL,
+  `player_id` int(11) NOT NULL,
+  `limit` int(11) NOT NULL,
+  PRIMARY KEY (`house_id`,`player_id`),
+  CONSTRAINT `zenith_house_bids_ibfk1` FOREIGN KEY (`house_id`) REFERENCES `houses` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `zenith_house_bids_ibfk2` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 --
 -- Table structure for table `zenith_news`
 --
@@ -874,16 +664,6 @@ CREATE TABLE `zenith_news` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `zenith_news`
---
-
-LOCK TABLES `zenith_news` WRITE;
-/*!40000 ALTER TABLE `zenith_news` DISABLE KEYS */;
-INSERT INTO `zenith_news` VALUES (1,'First news','first-news','Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et mi purus. Morbi vitae turpis vel neque vestibulum facilisis. Fusce faucibus diam augue, at tincidunt lorem posuere sit amet. Maecenas vel magna a quam feugiat mattis. Integer vel nulla vitae odio consequat porttitor in eget tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer mollis scelerisque mauris, venenatis aliquam nisl auctor eu. Vestibulum faucibus nisl tempus, dapibus lorem id, accumsan ipsum. Quisque dui metus, rhoncus non dolor non, placerat lobortis quam. Vestibulum vitae massa ut mi rhoncus adipiscing. Donec at arcu ac urna pellentesque ornare vitae eu justo. Ut convallis magna quis nisl rutrum, porta rhoncus eros congue. Integer purus neque, molestie ut dolor sit amet, varius convallis libero. Fusce tempus, felis at molestie blandit, enim mauris tempus quam, id suscipit tortor nisl sit amet arcu. Nullam in viverra lorem, sit amet vulputate nisi. Aliquam euismod sem nisi, sit amet fermentum felis ornare non.','published','2014-02-13 21:32:01','2014-02-10 17:01:55','2014-02-10 17:01:55'),(2,'Long news','long-news','In blandit accumsan turpis vitae fringilla. Suspendisse potenti. Nunc accumsan hendrerit euismod. Donec non risus arcu. Fusce feugiat vestibulum eros, quis tempus leo interdum ac. Cras lacinia sem nec ligula accumsan pretium lacinia vitae nibh. Vestibulum egestas eget felis nec luctus. Quisque et aliquam nunc, at pretium nisi. Nulla viverra nunc turpis, nec placerat velit pellentesque in. Morbi at elementum ligula.\n\n<!--more-->\n\nEtiam adipiscing, turpis vitae condimentum vehicula, enim nulla sollicitudin libero, sit amet faucibus leo lorem ac tellus. Praesent eget purus a diam fringilla venenatis. In dignissim est et lectus euismod, ac lacinia massa consequat. Maecenas facilisis leo eros, mollis facilisis mi ullamcorper vitae. Phasellus fringilla odio non velit lacinia, ut euismod ligula imperdiet. Etiam condimentum dignissim leo vel elementum. Aliquam erat volutpat. Nulla convallis nisl vitae semper auctor. Etiam mattis ac neque vel bibendum. Sed blandit ipsum nisi, ac tempus risus molestie non.\n\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi mauris ante, adipiscing eu odio eget, varius lacinia lorem. Proin nunc neque, hendrerit vel dapibus quis, rhoncus ac ipsum. Aenean viverra eros fermentum, dignissim eros id, rhoncus dolor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse accumsan ipsum et nunc tempor luctus quis eget lorem. Aenean vel dictum ante. Mauris ut purus felis. Pellentesque quis nibh pulvinar, porttitor turpis vel, eleifend libero. Vestibulum pretium, libero eget placerat varius, sem quam malesuada ipsum, et varius sem purus ut sem. In fermentum, nisl nec vulputate hendrerit, lectus velit commodo justo, ac ultrices lacus risus faucibus augue. Nunc vitae dolor arcu.\n\nSuspendisse potenti. Donec condimentum lacinia velit. Integer elit arcu, feugiat in venenatis eget, faucibus et eros. Ut sollicitudin nunc nec eros euismod scelerisque. Cras leo enim, feugiat ac ligula sed, tempus euismod quam. Duis non sollicitudin eros. Donec aliquam magna lorem, sit amet lobortis lorem tincidunt vel. In dui nisi, consequat at commodo ac, imperdiet eu sem. Proin pellentesque placerat commodo. Aenean a mattis augue.','published','2014-02-13 21:32:01','2014-02-10 18:00:00','2014-02-10 18:00:00');
-/*!40000 ALTER TABLE `zenith_news` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `zenith_newstickers`
 --
 
@@ -899,16 +679,6 @@ CREATE TABLE `zenith_newstickers` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `zenith_newstickers`
---
-
-LOCK TABLES `zenith_newstickers` WRITE;
-/*!40000 ALTER TABLE `zenith_newstickers` DISABLE KEYS */;
-INSERT INTO `zenith_newstickers` VALUES (1,'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit lacus fermentum sodales commodo.','2014-02-14 21:29:26'),(2,'In fermentum ipsum convallis risus vestibulum congue. Curabitur consectetur neque non dui consequat dignissim.','2014-02-14 21:30:04'),(3,'Duis ultrices, leo ac congue hendrerit, risus justo varius orci, sit amet suscipit enim lacus vel augue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.','2014-02-14 21:30:28'),(4,'Pellentesque euismod quam in lorem posuere condimentum. Vestibulum ac felis dictum, venenatis odio ut, tempus lacus.','2014-02-14 21:30:51'),(5,'Donec porttitor iaculis tincidunt. Cras fringilla eros ut arcu scelerisque, id hendrerit lacus tempus.','2014-02-14 21:31:03'),(6,'Suspendisse at nisl odio. Suspendisse arcu massa, lobortis sit amet iaculis ac, volutpat nec arcu.','2014-02-14 21:31:11');
-/*!40000 ALTER TABLE `zenith_newstickers` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `zenith_settings`
 --
 
@@ -920,6 +690,7 @@ CREATE TABLE `zenith_settings` (
   `key` varchar(32) NOT NULL,
   `value` varchar(255) NOT NULL DEFAULT 's:0:"";',
   `last` varchar(255) NOT NULL DEFAULT 's:0:"";',
+  `description` varchar(255) NOT NULL DEFAULT 'No description available.',
   PRIMARY KEY (`id`),
   UNIQUE KEY `key_UNIQUE` (`key`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
@@ -931,13 +702,9 @@ CREATE TABLE `zenith_settings` (
 
 LOCK TABLES `zenith_settings` WRITE;
 /*!40000 ALTER TABLE `zenith_settings` DISABLE KEYS */;
-INSERT INTO `zenith_settings` VALUES (1,'server_name','s:9:\"Forgotten\";','s:9:\"Forgotten\";'),(2,'world_type','s:3:\"pvp\";','s:3:\"pvp\";'),(3,'protection_level','i:1;','i:1;'),(4,'max_players','s:4:\"1000\";','s:4:\"1000\";'),(5,'rate_exp','i:5;','i:5;'),(6,'rate_skill','i:3;','i:3;'),(7,'rate_loot','i:2;','i:2;'),(8,'rate_magic','i:3;','i:3;'),(9,'rate_spawn','i:1;','i:1;'),(10,'owner_name','s:0:\"\";','s:0:\"\";'),(11,'owner_email','s:0:\"\";','s:0:\"\";'),(12,'location','s:6:\"Sweden\";','s:6:\"Sweden\";'),(13,'encryption_type','s:4:\"sha1\";','s:0:\"\";'),(14,'server_distro','s:6:\"tfs1.0\";',''),(15,'server_motto','s:20:\"The best server ever\";','s:0:\"\";'),(16,'enable_newstickers','b:0;','s:0:\"\";'),(17,'long_datetime_format','s:14:\"M d Y, H:i:s T\";','s:0:\"\";'),(18,'long_date_format','s:5:\"M d Y\";','s:0:\"\";'),(19,'vocations','a:9:{i:0;s:4:\"None\";i:1;s:8:\"Sorcerer\";i:2;s:5:\"Druid\";i:3;s:7:\"Paladin\";i:4;s:6:\"Knight\";i:5;s:15:\"Master Sorcerer\";i:6;s:11:\"Elder Druid\";i:7;s:13:\"Royal Paladin\";i:8;s:12:\"Elite Knight\";}','s:0:\"\";');
+INSERT INTO `zenith_settings` VALUES (1,'server_name','s:11:\"Zenith Demo\";','s:9:\"Forgotten\";','Server name. Will be displayed on the website title, first navigation bar URL and other places.'),(2,'world_type','s:3:\"pvp\";','s:3:\"pvp\";','PvP mode. Invalid modes (i.e. not in \'pvp\', \'no-pvp\' and \'pvp-enforced\') will hide informations about PvP.'),(3,'protection_level','i:1;','i:1;','Protection level. Minimum level at which players may attack eachother.'),(4,'max_players','s:4:\"1000\";','s:4:\"1000\";','Maximum online players.'),(5,'rate_exp','i:5;','i:5;','Experience rate. It may be an absolute value or an array of stages.'),(6,'rate_skill','i:3;','i:3;','Skill rate.'),(7,'rate_loot','i:2;','i:2;','Drop rate.'),(8,'rate_magic','i:3;','i:3;','Magic level rate.'),(9,'rate_spawn','i:1;','i:1;','Monster spawn rate.'),(10,'owner_name','s:0:\"\";','s:0:\"\";','Owner name. The name of the server administrator or administration group.'),(11,'owner_email','s:0:\"\";','s:0:\"\";','Owner email. Will be used for mailing lists, password recovery and other contact methods.'),(12,'location','s:6:\"Sweden\";','s:6:\"Sweden\";','Server location. Country where the server is hosted. May be useful for plugins.'),(13,'encryption_type','s:4:\"sha1\";','s:0:\"\";','Password encryption type. Please note that invalid/unrecognized types will be treated as \'plain\'. Take good care.'),(14,'server_distro','s:6:\"tfs1.0\";','','Server distribuition. It has to have an available module, otherwise the site will fail.'),(15,'server_motto','s:20:\"The best server ever\";','s:0:\"\";','Server motto. May be used on headers.'),(16,'enable_newstickers','b:0;','s:0:\"\";','Enable or disable newsticker on the landing/news page.'),(17,'long_datetime_format','s:14:\"M d Y, H:i:s T\";','s:0:\"\";','Long date and time format. Please read <a href=\'http://php.net/manual/en/function.date.php\'>PHP: date</a> before changing. Default is <strong>M d Y, H:i:s T</strong>.'),(18,'long_date_format','s:5:\"M d Y\";','s:0:\"\";','Long date format. Please read <a href=\'http://php.net/manual/en/function.date.php\'>PHP: date</a> before changing. Default is <strong>M d Y</strong>.'),(19,'vocations','a:9:{i:0;s:4:\"None\";i:1;s:8:\"Sorcerer\";i:2;s:5:\"Druid\";i:3;s:7:\"Paladin\";i:4;s:6:\"Knight\";i:5;s:15:\"Master Sorcerer\";i:6;s:11:\"Elder Druid\";i:7;s:13:\"Royal Paladin\";i:8;s:12:\"Elite Knight\";}','s:0:\"\";','List of player vocations.'),(20,'sexes','a:2:{i:0;s:6:\"female\";i:1;s:4:\"male\";}','s:0:\"\";','Player available sexes, in case you want to add something beyond <strong>female</strong> and <strong>male</strong>.'),(21,'new_player_choose_voc','b:1;','s:0:\"\";','Enable or disable new players\' ability to choose vocation.'),(22,'new_player_vocations','a:4:{i:0;i:1;i:1;i:2;i:2;i:3;i:3;i:4;}','s:0:\"\";','List of new players\' available vocations.'),(23,'new_player_cities','a:5:{i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:4;i:5;i:5;}','s:0:\"\";','List of new players\' available cities.'),(24,'cities','a:6:{i:0;a:4:{s:4:\"name\";s:7:\"No city\";s:4:\"posx\";i:0;s:4:\"posy\";i:0;s:4:\"posz\";i:0;}i:1;a:4:{s:4:\"name\";s:7:\"Trekolt\";s:4:\"posx\";i:95;s:4:\"posy\";i:117;s:4:\"posz\";i:7;}i:2;a:4:{s:4:\"name\";s:6:\"Rhyves\";s:4:\"posx\";i:159;s:4:\"posy\";i:387;s:4:\"posz\";i:6;}i:3;a:4:{s:4:\"name\";s:5:\"Varak\";s:4:\"posx\";i:242;s:4:\"posy\";i:429;s:4:\"posz\";i:12;}i:4;a:4:{s:4:\"name\";s:6:\"Jorvik\";s:4:\"posx\";i:496;s:4:\"posy\";i:172;s:4:\"posz\";i:7;}i:5;a:4:{s:4:\"name\";s:5:\"Saund\";s:4:\"posx\";i:240;s:4:\"posy\";i:566;s:4:\"posz\";i:7;}}','','List of map cities.'),(25,'allow_account_name_change','b:1;','','Enable or disable account name change.'),(26,'allow_account_email_change','b:0;','','Enable or disable account email change <strong>after it was set for the first time</strong>. Please note: by default, Zenith will create accounts without email set, so prohibiting from the start would effectively lock accounts with emails not set.'),(27,'highscores_max_pages','i:10;','','No description available.'),(28,'highscores_per_page','i:25;','','No description available.'),(29,'friendly_datetime','b:1;','','No description available.'),(30,'house_price_each_sqm','i:45;','','No description available.'),(31,'house_rent_period','s:7:\"monthly\";','','No description available.');
 /*!40000 ALTER TABLE `zenith_settings` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'otserv'
---
 
 --
 -- Dumping routines for database 'otserv'
